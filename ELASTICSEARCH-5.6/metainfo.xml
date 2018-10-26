@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>ELASTICSEARCH</name>
+            <displayName>Elasticsearch</displayName>
+            <comment>A highly scalable open-source full-text search and analytics engine. Including storage, searching, and analyzing big volumes of data quickly and in near real time. </comment>
+            <version>5.6.10</version>
+            <components>
+                <component>
+                    <name>ELASTICSEARCH_MASTER</name>
+                    <displayName>Elasticsearch Master</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1+</cardinality>
+                    <versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/es_master.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>1200</timeout>
+                    </commandScript>
+                    <logs>
+                        <log>
+                            <logId>elasticsearch_master</logId>
+                            <primary>true</primary>
+                        </log>
+                    </logs>
+                </component>
+                <component>
+                    <name>ELASTICSEARCH_SLAVE</name>
+                    <displayName>Elasticsearch Slave</displayName>
+                    <category>SLAVE</category>
+                    <cardinality>1+</cardinality>
+                    <versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/es_slave.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>1200</timeout>
+                    </commandScript>
+                    <logs>
+                        <log>
+                            <logId>elasticsearch_slave</logId>
+                            <primary>true</primary>
+                        </log>
+                    </logs>
+                </component>
+                <!--<component>-->
+                    <!--<name>ELASTICSEARCH_CLIENT</name>-->
+                    <!--<displayName>Elasticsearch Client</displayName>-->
+                    <!--<category>CLIENT</category>-->
+                    <!--<cardinality>1+</cardinality>-->
+                    <!--<versionAdvertised>true</versionAdverstised>-->
+                    <!--<commandScript>-->
+                        <!--<script>scripts/e_client.py</script>-->
+                        <!--<scriptType>PYTHON</scriptType>-->
+                    <!--</commandScript>-->
+                    <!--<configFiles>-->
+                        <!--<configFile>-->
+                            <!--<type>yml</type>-->
+                            <!--<fileName>elasticsearch.yml</fileName>-->
+                            <!--<dictionaryName>elasticsearch-config</dictionaryName>-->
+                        <!--</configFile>-->
+                        <!--<configFile>-->
+                            <!--<type>env</type>-->
+                            <!--<fileName>jvm.options</fileName>-->
+                            <!--<dictionaryName>elasticsearch-jvm</dictionaryName>-->
+                        <!--</configFile>-->
+                        <!--<configFile>-->
+                            <!--<type>env</type>-->
+                            <!--<fileName>log4j2.properties</fileName>-->
+                            <!--<dictionaryName>elasticsearch-log4j</dictionaryName>-->
+                        <!--</configFile>-->
+                    <!--</configFiles>-->
+                <!--</component>-->
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                    <packages>
+                        <package>
+                            <name>elasticsearch-5.6.10</name>
+                        </package>
+                    </packages>
+                </osSpecific>
+            </osSpecifics>
+            <commandScript>
+                <script>scripts/service_check.py</script>
+                <scriptType>PYTHON</scriptType>
+                <timeout>300</timeout>
+            </commandScript>
+
+            <configuration-dependencies>
+                <config-type>elasticsearch-config</config-type>
+                <config-type>elasticsearch-env</config-type>
+                <config-type>elasticsearch-log4j</config-type>
+            </configuration-dependencies>
+
+            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+
+            <quickLinksConfigurations>
+                <quickLinksConfiguration>
+                    <fileName>quicklinks.json</fileName>
+                    <default>true</default>
+                </quickLinksConfiguration>
+            </quickLinksConfigurations>
+
+        </service>
+    </services>
+</metainfo>
