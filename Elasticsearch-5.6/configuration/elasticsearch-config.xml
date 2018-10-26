@@ -37,11 +37,11 @@
         <description>Path to directory where to store the data (separate multiple locations by comma)</description>
     </property>
 
-    <property>
-        <name>path_logs</name>
-        <value>/data/data1/elasticsearch/logs</value>
-        <description>Path to directory where to store the logs</description>
-    </property>
+    <!--<property>-->
+        <!--<name>path_logs</name>-->
+        <!--<value>/data/data1/elasticsearch/logs</value>-->
+        <!--<description>Path to directory where to store the logs</description>-->
+    <!--</property>-->
 
     <!-- Memory -->
     <property>
@@ -66,13 +66,13 @@
     <!-- Discovery -->
     <property>
         <name>discovery_zen_ping_unicast_hosts</name>
-        <value>{{hostname}}</value>
-        <description>Pass an initial list of hosts to perform discovery when new node is started</description>
+        <value></value>
+        <description>Pass an initial list of hosts to perform discovery when new node is started (separate multiple locations by comma). e.g.host1,host2</description>
     </property>
 
     <property>
         <name>discovery_zen_minimum_master_nodes</name>
-        <value>3</value>
+        <value>1</value>
         <description>Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1)</description>
     </property>
 

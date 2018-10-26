@@ -18,8 +18,8 @@
 
     <property>
         <name>elasticsearch_download_url</name>
-        <value>https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.10.tar.gz</value>
-        <description>Elasticsearch package download url</description>
+        <value></value>
+        <description>Elasticsearch package download url. The official download url is: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.10.tar.gz</description>
     </property>
 
     <property>
@@ -46,12 +46,6 @@
         <name>elasticsearch_log_dir</name>
         <value>/var/log/elasticsearch</value>
         <description>Elasticsearch log directory</description>
-    </property>
-
-    <property>
-        <name>elasticsearch_conf_dir</name>
-        <value>/opt/elasticsearch/config</value>
-        <description>Elasticsearch configuration directory</description>
     </property>
 
     <property>

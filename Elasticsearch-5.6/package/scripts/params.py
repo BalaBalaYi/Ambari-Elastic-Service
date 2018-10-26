@@ -19,26 +19,40 @@ java64_home = config['hostLevelParams']['java_home']
 hostname = config['hostname']
 
 
-# env
+# es env
 es_user = config['configurations']['elasticsearch-env']['elasticsearch_user']
 es_group = config['configurations']['elasticsearch-env']['elasticsearch_group']
 
-es_base_dir = config['configurations']['elasticsearch-env']['elasticsearch_base_dir']
-es_conf_dir = config['configurations']['elasticsearch-env']['elasticsearch_conf_dir']
-es_log_dir = config['configurations']['elasticsearch-env']['elasticsearch_log_dir']
-es_pid_dir = config['configurations']['elasticsearch-env']['elasticsearch_pid_dir']
-es_pid_file = format("{es_pid_dir}/elasticsearch.pid")
+es_master_base_dir = config['configurations']['elasticsearch-env']['elasticsearch_base_dir'] + '/master'
+es_slave_base_dir = config['configurations']['elasticsearch-env']['elasticsearch_base_dir'] + '/slave'
 
-es_install_log = es_base_dir + '/elasticsearch-install.log'
+es_master_conf_dir = es_master_base_dir + '/config'
+es_slave_conf_dir = es_slave_base_dir + '/config'
+
+es_master_log_dir = config['configurations']['elasticsearch-env']['elasticsearch_log_dir'] + '/master'
+es_slave_log_dir = config['configurations']['elasticsearch-env']['elasticsearch_log_dir'] + '/slave'
+
+es_master_pid_dir = config['configurations']['elasticsearch-env']['elasticsearch_pid_dir'] + '/master'
+es_slave_pid_dir = config['configurations']['elasticsearch-env']['elasticsearch_pid_dir'] + '/slave'
+
+es_master_pid_file = format("{es_master_pid_dir}/elasticsearch-master.pid")
+es_slave_pid_file = format("{es_slave_pid_dir}/elasticsearch-slave.pid")
+
+es_master_install_log = es_master_log_dir + '/elasticsearch-install.log'
+es_slave_install_log = es_slave_log_dir + '/elasticsearch-install.log'
+
 es_download_url = config['configurations']['elasticsearch-env']['elasticsearch_download_url']
 
 
-# config
+# es config
 cluster_name = config['configurations']['elasticsearch-config']['cluster_name']
 hostname = config['hostname']
 node_attr_rack = config['configurations']['elasticsearch-config']['node_attr_rack']
 path_data = config['configurations']['elasticsearch-config']['path_data']
-path_logs = config['configurations']['elasticsearch-config']['path_logs']
+
+master_path_logs = es_master_log_dir
+slave_path_logs = es_master_log_dir
+
 
 bootstrap_memory_lock = str(config['configurations']['elasticsearch-config']['bootstrap_memory_lock'])
 
@@ -48,7 +62,7 @@ if bootstrap_memory_lock == 'True':
 else:
     bootstrap_memory_lock = 'false'
 
-network_host = config['configurations']['elasticsearch-config']['{network_host']
+network_host = config['configurations']['elasticsearch-config']['network_host']
 http_port = config['configurations']['elasticsearch-config']['http_port']
 
 discovery_zen_ping_unicast_hosts = str(config['configurations']['elasticsearch-config']['discovery_zen_ping_unicast_hosts'])

@@ -8,5 +8,6 @@ from resource_management import *
 
 config = Script.get_config()
 
-elastic_pid_dir = config['configurations']['elasticsearch-env']['elasticsearch_pid_dir']
-elastic_pid_file = format("{elasticsearch_pid_dir}/elasticsearch.pid")
+es_pid_dir = config['configurations']['elasticsearch-env']['elasticsearch_pid_dir']
+es_master_pid_file = format("{es_pid_dir}/elasticsearch-master.pid")
+es_slave_pid_file = format("{es_pid_dir}/elasticsearch-slave.pid")

@@ -12,7 +12,7 @@
         "name": "elasticsearch_ui",
         "label": "Elasticsearch UI",
         "requires_user_name": "false",
-        "component_name": "ELASTICSEARCH",
+        "component_name": "ELASTICSEARCH_MASTER",
         "url":"%@://%@:%@",
         "port":{
           "http_property": "http_port",
