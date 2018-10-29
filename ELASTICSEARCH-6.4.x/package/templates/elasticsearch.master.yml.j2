@@ -14,33 +14,38 @@
 #
 # Use a descriptive name for your cluster:
 #
-#cluster.name: my-application
+cluster.name: {{cluster_name}}
 #
 # ------------------------------------ Node ------------------------------------
 #
 # Use a descriptive name for the node:
 #
-#node.name: node-1
+node.name: {{hostname}}-master
+node.max_local_storage_nodes: 2
 #
 # Add custom attributes to the node:
 #
-#node.attr.rack: r1
+node.attr.rack: {{node_attr_rack}}
 #
+
+node.master: true
+node.data: true
+
 # ----------------------------------- Paths ------------------------------------
 #
 # Path to directory where to store the data (separate multiple locations by comma):
 #
-#path.data: /path/to/data
+path.data: {{master_path_data}}
 #
 # Path to log files:
 #
-#path.logs: /path/to/logs
+path.logs: {{master_path_logs}}
 #
 # ----------------------------------- Memory -----------------------------------
 #
 # Lock the memory on startup:
 #
-#bootstrap.memory_lock: true
+bootstrap.memory_lock: {{bootstrap_memory_lock}}
 #
 # Make sure that the heap size is set to about half the memory available
 # on the system and that the owner of the process is allowed to use this
@@ -52,9 +57,9 @@
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
-#network.host: 192.168.0.1
+network.host: {{network_host}}
 #
-# Set a custom port for HTTP:
+# Set a custom port for HTTP (Defaults to 9200-9300):
 #
 #http.port: 9200
 #
@@ -65,11 +70,11 @@
 # Pass an initial list of hosts to perform discovery when new node is started:
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
-#discovery.zen.ping.unicast.hosts: ["host1", "host2"]
+discovery.zen.ping.unicast.hosts: {{discovery_zen_ping_unicast_hosts}}
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
 #
-#discovery.zen.minimum_master_nodes: 3
+discovery.zen.minimum_master_nodes: {{discovery_zen_minimum_master_nodes}}
 #
 # For more information, consult the zen discovery module documentation.
 #
@@ -77,7 +82,7 @@
 #
 # Block initial recovery after a full cluster restart until N nodes are started:
 #
-#gateway.recover_after_nodes: 3
+gateway.recover_after_nodes: {{gateway_recover_after_nodes}}
 #
 # For more information, consult the gateway module documentation.
 #
@@ -85,4 +90,4 @@
 #
 # Require explicit names when deleting indices:
 #
-#action.destructive_requires_name: true
+action.destructive_requires_name: {{action_destructive_requires_name}}

@@ -19,7 +19,7 @@
     <property>
         <name>elasticsearch_download_url</name>
         <value></value>
-        <description>Elasticsearch package download url. The official download url is: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.6.10.tar.gz</description>
+        <description>Elasticsearch package download url. The official download url is: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.tar.gz</description>
     </property>
 
     <property>
@@ -43,15 +43,17 @@
     </property>
 
     <property>
-        <name>elasticsearch_log_dir</name>
-        <value>/var/log/elasticsearch</value>
-        <description>Elasticsearch log directory</description>
-    </property>
-
-    <property>
         <name>elasticsearch_pid_dir</name>
         <value>/var/run/elasticsearch</value>
         <description>Elasticsearch PID directory</description>
     </property>
+
+    <property>
+        <name>elasticsearch_heap_size</name>
+        <value>2g</value>
+        <description>The initial and maximum size of total heap space of elasticsearch. e.g. 4g</description>
+    </property>
+
+
 
 </configuration>

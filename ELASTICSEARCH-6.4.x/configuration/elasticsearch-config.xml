@@ -37,11 +37,11 @@
         <description>Path to directory where to store the data (separate multiple locations by comma)</description>
     </property>
 
-    <!--<property>-->
-        <!--<name>path_logs</name>-->
-        <!--<value>/data/data1/elasticsearch/logs</value>-->
-        <!--<description>Path to directory where to store the logs</description>-->
-    <!--</property>-->
+    <property>
+        <name>path_logs</name>
+        <value>/var/log/elasticsearch</value>
+        <description>Path to directory where to store the logs</description>
+    </property>
 
     <!-- Memory -->
     <property>
@@ -57,11 +57,11 @@
         <description>Set the bind address to a specific IP (IPv4 or IPv6)</description>
     </property>
 
-    <property>
-        <name>http_port</name>
-        <value>9200</value>
-        <description>Set a custom port for HTTP</description>
-    </property>
+    <!--<property>-->
+        <!--<name>http_port</name>-->
+        <!--<value>9200</value>-->
+        <!--<description>Set a custom port for HTTP</description>-->
+    <!--</property>-->
 
     <!-- Discovery -->
     <property>
@@ -96,9 +96,4 @@
         <description>Require explicit names when deleting indices</description>
     </property>
 
-    <property>
-        <name>xpack_security_enabled</name>
-        <value>false</value>
-        <description>Enable X-Pack security module</description>
-    </property>
 </configuration>
