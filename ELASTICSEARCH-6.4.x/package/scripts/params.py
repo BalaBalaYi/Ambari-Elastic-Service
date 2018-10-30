@@ -43,7 +43,7 @@ es_download_url = config['configurations']['elasticsearch-env']['elasticsearch.d
 
 # jvm
 heap_size = config['configurations']['elasticsearch-env']['elasticsearch.heap.size'] + 'g'
-
+jvm_opts = config['configurations']['elasticsearch-env']['jvm.opts']
 
 # es config
 cluster_name = config['configurations']['elasticsearch-config']['cluster.name']
