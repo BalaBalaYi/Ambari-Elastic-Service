@@ -18,43 +18,53 @@
 
     <!-- Cluster -->
     <property>
-        <name>cluster_name</name>
+        <name>cluster.name</name>
         <value>my_es_cluster</value>
-        <description>Use a descriptive name for your cluster</description>
+        <display-name>Cluster Name</display-name>
+        <description>Use a descriptive name for your cluster.</description>
     </property>
 
     <!-- Node -->
     <property>
-        <name>node_attr_rack</name>
+        <name>node.attr.rack</name>
         <value>rack01</value>
-        <description>Add custom attributes to the node</description>
+        <display-name>Node Arribute Rack</display-name>
+        <description>Add custom attributes to the node.</description>
     </property>
 
     <!-- Paths -->
     <property>
-        <name>path_data</name>
+        <name>path.data</name>
         <value>/data/data1/elasticsearch/data</value>
-        <description>Path to directory where to store the data (separate multiple locations by comma)</description>
+        <display-name>Path Data</display-name>
+        <description>Path to directory where to store the data. (separate multiple locations by comma)</description>
     </property>
 
     <property>
-        <name>path_logs</name>
+        <name>path.logs</name>
         <value>/var/log/elasticsearch</value>
-        <description>Path to directory where to store the logs</description>
+        <display-name>Path Log</display-name>
+        <description>Path to directory where to store the logs.</description>
     </property>
 
     <!-- Memory -->
     <property>
-        <name>bootstrap_memory_lock</name>
+        <name>bootstrap.memory.lock</name>
         <value>true</value>
-        <description>Lock the memory on startup</description>
+        <value-attributes>
+            <type>boolean</type>
+            <overridable>false</overridable>
+        </value-attributes>
+        <display-name>Bootstrap Memory Lock</display-name>
+        <description>Lock the memory on startup.</description>
     </property>
 
     <!-- Network -->
     <property>
-        <name>network_host</name>
+        <name>network.host</name>
         <value>0.0.0.0</value>
-        <description>Set the bind address to a specific IP (IPv4 or IPv6)</description>
+        <display-name>Network Host</display-name>
+        <description>Set the bind address to a specific IP. (IPv4 or IPv6)</description>
     </property>
 
     <!--<property>-->
@@ -65,35 +75,59 @@
 
     <!-- Discovery -->
     <property>
-        <name>discovery_zen_ping_unicast_hosts</name>
+        <name>discovery.zen.ping.unicast.hosts</name>
         <value></value>
+        <display-name>Discovery Zen Ping Unicast Hosts</display-name>
         <description>Pass an initial list of hosts to perform discovery when new node is started (separate multiple locations by comma). e.g.host1,host2</description>
     </property>
 
     <property>
-        <name>discovery_zen_minimum_master_nodes</name>
+        <name>discovery.zen.minimum.master.nodes</name>
         <value>1</value>
-        <description>Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1)</description>
+        <value-attributes>
+            <type>int</type>
+            <unit>Nodes</unit>
+            <overridable>false</overridable>
+        </value-attributes>
+        <display-name>Discovery Zen Minimum Master Nodes</display-name>
+        <description>Prevent the "split brain" by configuring the majority of nodes. (total number of nodes / 2 + 1)</description>
     </property>
 
     <!-- Gateway -->
     <property>
-        <name>gateway_recover_after_nodes</name>
-        <value>3</value>
-        <description>Block initial recovery after a full cluster restart until N nodes are started</description>
+        <name>gateway.recover.after.nodes</name>
+        <value>1</value>
+        <value-attributes>
+            <type>int</type>
+            <unit>Nodes</unit>
+            <overridable>false</overridable>
+        </value-attributes>
+        <display-name>Gateway Recover After Nodes</display-name>
+        <description>Block initial recovery after a full cluster restart until N nodes are started.</description>
     </property>
 
     <!-- Various -->
     <property>
-        <name>node_max_local_storage_nodes</name>
+        <name>node.max.local.storage.nodes</name>
         <value>1</value>
-        <description>Disable starting multiple nodes on a single system</description>
+        <value-attributes>
+            <type>int</type>
+            <unit>Nodes</unit>
+            <overridable>false</overridable>
+        </value-attributes>
+        <display-name>Node Max Local Storage Nodes</display-name>
+        <description>Disable starting multiple nodes on a single system.</description>
     </property>
 
     <property>
-        <name>action_destructive_requires_name</name>
+        <name>action.destructive.requires.name</name>
         <value>true</value>
-        <description>Require explicit names when deleting indices</description>
+        <value-attributes>
+            <type>boolean</type>
+            <overridable>false</overridable>
+        </value-attributes>
+        <display-name>Action Destructive Requires Name</display-name>
+        <description>Require explicit names when deleting indices.</description>
     </property>
 
 </configuration>

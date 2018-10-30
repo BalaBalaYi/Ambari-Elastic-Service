@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>KIBANA</name>
+            <displayName>Kibana</displayName>
+            <comment>An open source analytics and visualization platform designed to work with Elasticsearch.</comment>
+            <version>6.4.2</version>
+            <components>
+                <component>
+                    <name>KIBANA_SERVER</name>
+                    <displayName>Kibana Server</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/kibana_server.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>1200</timeout>
+                    </commandScript>
+                    <logs>
+                        <log>
+                            <logId>kibana_server</logId>
+                            <primary>true</primary>
+                        </log>
+                    </logs>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                    <packages>
+                        <package>
+                            <name>kibana-6.4.2</name>
+                        </package>
+                    </packages>
+                </osSpecific>
+            </osSpecifics>
+            <commandScript>
+                <script>scripts/service_check.py</script>
+                <scriptType>PYTHON</scriptType>
+                <timeout>300</timeout>
+            </commandScript>
+
+            <configuration-dependencies>
+                <config-type>kibana-config</config-type>
+                <config-type>kibana-env</config-type>
+            </configuration-dependencies>
+
+            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+
+            <quickLinksConfigurations>
+                <quickLinksConfiguration>
+                    <fileName>quicklinks.json</fileName>
+                    <default>true</default>
+                </quickLinksConfiguration>
+            </quickLinksConfigurations>
+
+        </service>
+    </services>
+</metainfo>
