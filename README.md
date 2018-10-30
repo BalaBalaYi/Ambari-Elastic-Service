@@ -8,7 +8,7 @@
 | Service | Elasticsearch |
 | Component-Master | Elasticsearch-Master (node.master=true, node.data=true) |
 | Component-Slave | Elasticsearch-Slave (node.master=flase, node.data=true)  |
-| Extra | Inlucding all X-Pack features |
+| Extra | Including all X-Pack features |
 
 ### Kibana 6.4.x
 In development...
