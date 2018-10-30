@@ -31,6 +31,6 @@ cp -r ./ELASTICSEARCH-6.4.x /var/lib/ambari-server/resources/stacks/HDP/2.6/serv
 ambari-server restart
 ```
 4. Log into web then add service as usual.Such as:
-
+![image](https://github.com/BalaBalaYi/Ambari-Elastic-Service/blob/master/doc/es-ambari-1.png)
 
 5. Enjoy urself.
