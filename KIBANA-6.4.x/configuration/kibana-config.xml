@@ -19,7 +19,7 @@
     <!-- BASIC -->
     <property>
         <name>server.host</name>
-        <value>localhost</value>
+        <value></value>
         <display-name>Server Host</display-name>
         <description>Specifies the address to which the Kibana server will bind. IP addresses and host names are both valid values.</description>
     </property>
@@ -39,15 +39,40 @@
     </property>
 
     <property>
+        <name>server.basePath</name>
+        <value>none</value>
+        <value-attributes>
+            <empty-value-valid>true</empty-value-valid>
+        </value-attributes>
+        <display-name>Server Base Path</display-name>
+        <description>Enables you to specify a path to mount Kibana at if you are running behind a proxy. Use the `server.rewriteBasePath` setting to tell Kibana if it should remove the basePath from requests it receives, and to prevent a deprecation warning at startup. This setting cannot end in a slash.</description>
+    </property>
+
+    <property>
+        <name>server.rewriteBasePath</name>
+        <value>false</value>
+        <value-attributes>
+            <type>boolean</type>
+            <overridable>false</overridable>
+        </value-attributes>
+        <display-name>Server Rewrite Base Path</display-name>
+        <description>Specifies whether Kibana should rewrite requests that are prefixed with `server.basePath` or require that they are rewritten by your reverse proxy. This setting was effectively always `false` before Kibana 6.3 and will default to `true` starting in Kibana 7.0.</description>
+    </property>
+
+    <property>
         <name>elasticsearch.url</name>
-        <value>http://localhost:9200</value>
+        <value></value>
         <display-name>Elasticsearch Url</display-name>
-        <description>The URL of the Elasticsearch instance to use for all your queries.</description>
+        <description>The URL of the Elasticsearch instance to use for all your queries. e.g.http://host:9200</description>
     </property>
 
     <property>
         <name>elasticsearch.preserveHost</name>
         <value>true</value>
+        <value-attributes>
+            <type>boolean</type>
+            <overridable>false</overridable>
+        </value-attributes>
         <display-name>Elasticsearch Preserve Host</display-name>
         <description>When this setting's value is true Kibana uses the hostname specified in the server.host setting. When the value of this setting is false, Kibana uses the hostname of the host that connects to this Kibana instance.</description>
     </property>
@@ -73,7 +98,7 @@
 
     <property>
         <name>kibana.defaultAppId</name>
-        <value></value>
+        <value>home</value>
         <display-name>Kibana Default AppId</display-name>
         <description>Pass an initial list of hosts to perform discovery when new node is started (separate multiple locations by comma). e.g.host1,host2</description>
     </property>
@@ -107,9 +132,12 @@
 
     <property>
         <name>server.ssl.certificate</name>
-        <value>/path/to/your/server.crt</value>
+        <value>none</value>
+        <value-attributes>
+            <empty-value-valid>true</empty-value-valid>
+        </value-attributes>
         <display-name>Server SSL Certificate</display-name>
-        <description>Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively. These settings enable SSL for outgoing requests from the Kibana server to the browser.</description>
+        <description>Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively. These settings enable SSL for outgoing requests from the Kibana server to the browser. e.g./path/to/your/server.crt</description>
         <depends-on>
             <property>
                 <type>kibana-config</type>
@@ -120,9 +148,12 @@
 
     <property>
         <name>server.ssl.key</name>
-        <value>/path/to/your/server.key</value>
+        <value>none</value>
+        <value-attributes>
+            <empty-value-valid>true</empty-value-valid>
+        </value-attributes>
         <display-name>Server SSL Key</display-name>
-        <description>Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively. These settings enable SSL for outgoing requests from the Kibana server to the browser.</description>
+        <description>Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively. These settings enable SSL for outgoing requests from the Kibana server to the browser. e.g./path/to/your/server.key</description>
         <depends-on>
             <property>
                 <type>kibana-config</type>
@@ -134,23 +165,32 @@
     <!-- ES SSL -->
     <property>
         <name>elasticsearch.ssl.certificate</name>
-        <value>/path/to/your/client.crt</value>
+        <value>none</value>
+        <value-attributes>
+            <empty-value-valid>true</empty-value-valid>
+        </value-attributes>
         <display-name>Elasticsearch SSL Certificate</display-name>
-        <description>Optional settings that provide the paths to the PEM-format SSL certificate and key files. These files validate that your Elasticsearch backend uses the same key files.</description>
+        <description>Optional settings that provide the paths to the PEM-format SSL certificate and key files. These files validate that your Elasticsearch backend uses the same key files. e.g./path/to/your/client.crt</description>
     </property>
 
     <property>
         <name>elasticsearch.ssl.key</name>
-        <value>/path/to/your/client.crt</value>
+        <value>none</value>
+        <value-attributes>
+            <empty-value-valid>true</empty-value-valid>
+        </value-attributes>
         <display-name>Elasticsearch SSL Key</display-name>
-        <description>Optional settings that provide the paths to the PEM-format SSL certificate and key files. These files validate that your Elasticsearch backend uses the same key files.</description>
+        <description>Optional settings that provide the paths to the PEM-format SSL certificate and key files. These files validate that your Elasticsearch backend uses the same key files. e.g./path/to/your/client.key</description>
     </property>
 
     <property>
         <name>elasticsearch.ssl.certificateAuthorities</name>
-        <value>[ "/path/to/your/CA.pem" ]</value>
+        <value>none</value>
+        <value-attributes>
+            <empty-value-valid>true</empty-value-valid>
+        </value-attributes>
         <display-name>Elasticsearch SSL Certificate Authorities</display-name>
-        <description>Optional setting that enables you to specify a path to the PEM file for the certificate authority for your Elasticsearch instance.</description>
+        <description>Optional setting that enables you to specify a path to the PEM file for the certificate authority for your Elasticsearch instance. e.g.[ "/path/to/your/CA.pem" ]</description>
     </property>
 
     <property>
@@ -241,23 +281,9 @@
     </property>
 
     <property>
-        <name>pid.file</name>
-        <value>/var/run/kibana/kibana.pid</value>
-        <display-name>Kibana Pid File</display-name>
-        <description>Specifies the path where Kibana creates the process ID file.</description>
-    </property>
-
-    <property>
-        <name>logging.dest</name>
-        <value>/var/log/kibana/kibana.log</value>
-        <display-name>Kibana Log File</display-name>
-        <description>Enables you specify a file where Kibana stores log output.</description>
-    </property>
-
-    <property>
-        <name>logging.dest</name>
-        <value>/var/log/kibana/kibana.log</value>
-        <display-name>Kibana Log File</display-name>
+        <name>logging.dest.dir</name>
+        <value>/var/log/kibana</value>
+        <display-name>Kibana Log File Directory</display-name>
         <description>Enables you specify a file where Kibana stores log output.</description>
     </property>
 
@@ -281,17 +307,6 @@
         </value-attributes>
         <display-name>Kibana Log Quiet Enabled</display-name>
         <description>Set the value of this setting to true to suppress all logging output other than error messages.</description>
-    </property>
-
-    <property>
-        <name>logging.verbose</name>
-        <value>false</value>
-        <value-attributes>
-            <type>boolean</type>
-            <overridable>false</overridable>
-        </value-attributes>
-        <display-name>Kibana Log Verbose Enabled</display-name>
-        <description>Set the value of this setting to true to log all events, including system usage information and all requests.</description>
     </property>
 
     <property>

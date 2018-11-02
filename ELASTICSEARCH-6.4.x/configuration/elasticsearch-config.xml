@@ -68,7 +68,7 @@
     </property>
 
     <!--<property>-->
-        <!--<name>http_port</name>-->
+        <!--<name>http.port</name>-->
         <!--<value>9200</value>-->
         <!--<description>Set a custom port for HTTP</description>-->
     <!--</property>-->

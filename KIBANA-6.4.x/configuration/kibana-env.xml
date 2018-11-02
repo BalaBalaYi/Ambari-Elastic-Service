@@ -17,29 +17,40 @@
 <configuration supports_adding_forbidden="true">
 
     <property>
-        <name>kibana_download_url</name>
+        <name>kibana.download.url</name>
         <value></value>
+        <display-name>Kibana Download Url</display-name>
         <description>Kibana package download url. The official download url is: https://artifacts.elastic.co/downloads/kibana/kibana-6.4.2-linux-x86_64.tar.gz</description>
     </property>
 
     <property>
-        <name>kibana_user</name>
+        <name>kibana.user</name>
         <value>kibana</value>
         <property-type>USER</property-type>
-        <description>Kibana user</description>
+        <display-name>Kibana User</display-name>
+        <description>Kibana unix user</description>
     </property>
 
     <property>
-        <name>kibana_group</name>
+        <name>kibana.group</name>
         <value>kibana</value>
         <property-type>GROUP</property-type>
-        <description>Kibana group</description>
+        <display-name>Kibana Group</display-name>
+        <description>Kibana unix group</description>
     </property>
 
     <property>
-        <name>kibana_base_dir</name>
+        <name>kibana.base.dir</name>
         <value>/opt/kibana</value>
+        <display-name>Kibana Base Directory</display-name>
         <description>Kibana base directory</description>
+    </property>
+
+    <property>
+        <name>pid.file.dir</name>
+        <value>/var/run/kibana</value>
+        <display-name>Kibana Pid File Directory</display-name>
+        <description>Specifies the path where Kibana creates the process ID file.</description>
     </property>
 
     

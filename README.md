@@ -11,11 +11,16 @@
 | Extra | Including all X-Pack features |
 
 ### Kibana 6.4.x
-In development...
+|  Feature   |  Description       |
+| -----------| -----------------|
+| Version | 6.4.2 |
+| Service | Kibana |
+| Component-Master | Kibana-Sever |
+| Extra | Including all X-Pack features |
 
 
 ## Prerequisite
-|  Softwate   |  Version | Status  |
+|  Software   |  Version | Status  |
 | -----------| -----------------| -----------------|
 | Ambari | 2.x (test on 2.6.2.0) | Fully Installed |
 
@@ -33,4 +38,8 @@ ambari-server restart
 4. Log into web then add service as usual. Such as:
 ![image](https://github.com/BalaBalaYi/Ambari-Elastic-Service/blob/master/doc/es-ambari-1.png)
 
-5. Enjoy urself^^
+5. Enjoy urself.^^
+
+
+## Notice
+Need more test if using on production.
