@@ -50,7 +50,7 @@
                     <osFamily>any</osFamily>
                     <packages>
                         <package>
-                            <name>elasticsearch-6.4.2</name>
+                            <name>elasticsearch-6.4.2</name>  <!-- Not using. Please make sure the os already contains all the dependencies. -->
                         </package>
                     </packages>
                 </osSpecific>

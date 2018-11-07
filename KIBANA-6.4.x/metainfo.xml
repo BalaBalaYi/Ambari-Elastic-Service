@@ -32,7 +32,7 @@
                     <osFamily>any</osFamily>
                     <packages>
                         <package>
-                            <name>kibana-6.4.2</name>
+                            <name>kibana-6.4.2</name> <!-- Not using. Please make sure the os already contains all the dependencies. -->
                         </package>
                     </packages>
                 </osSpecific>
