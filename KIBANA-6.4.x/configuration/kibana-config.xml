@@ -50,7 +50,7 @@
 
     <property>
         <name>server.rewriteBasePath</name>
-        <value>False</value>
+        <value>false</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -68,7 +68,7 @@
 
     <property>
         <name>elasticsearch.preserveHost</name>
-        <value>True</value>
+        <value>true</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -121,7 +121,7 @@
     <!-- SEVER SSL -->
     <property>
         <name>server.ssl.enabled</name>
-        <value>False</value>
+        <value>false</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -265,7 +265,7 @@
 
     <property>
         <name>elasticsearch.logQueries</name>
-        <value>False</value>
+        <value>false</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -289,7 +289,7 @@
 
     <property>
         <name>logging.silent</name>
-        <value>False</value>
+        <value>false</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -300,7 +300,7 @@
 
     <property>
         <name>logging.quiet</name>
-        <value>False</value>
+        <value>false</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -311,7 +311,7 @@
 
     <property>
         <name>logging.verbose</name>
-        <value>False</value>
+        <value>false</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>

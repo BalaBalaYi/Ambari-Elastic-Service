@@ -50,7 +50,7 @@
     <!-- Memory -->
     <property>
         <name>bootstrap.memory.lock</name>
-        <value>True</value>
+        <value>true</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
@@ -121,7 +121,7 @@
 
     <property>
         <name>action.destructive.requires.name</name>
-        <value>True</value>
+        <value>true</value>
         <value-attributes>
             <type>boolean</type>
             <overridable>false</overridable>
