@@ -66,9 +66,7 @@ master_path_logs = es_master_log_dir
 slave_path_logs = es_slave_log_dir
 
 bootstrap_memory_lock = str(config['configurations']['elasticsearch-config']['bootstrap.memory.lock'])
-
-# 'True' -> 'true', 'False' -> 'false'
-if bootstrap_memory_lock == 'True':
+if bootstrap_memory_lock is True:
     bootstrap_memory_lock = 'true'
 else:
     bootstrap_memory_lock = 'false'
@@ -89,9 +87,7 @@ gateway_recover_after_nodes = config['configurations']['elasticsearch-config']['
 node_max_local_storage_nodes = config['configurations']['elasticsearch-config']['node.max.local.storage.nodes']
 
 action_destructive_requires_name = str(config['configurations']['elasticsearch-config']['action.destructive.requires.name'])
-
-# 'True' -> 'true', 'False' -> 'false'
-if action_destructive_requires_name == 'True':
+if action_destructive_requires_name is True:
     action_destructive_requires_name = 'true'
 else:
     action_destructive_requires_name = 'false'

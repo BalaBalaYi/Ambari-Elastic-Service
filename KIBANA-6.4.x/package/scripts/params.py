@@ -33,16 +33,14 @@ else:
     server_basePath = 'server.basePath: ' + server_basePath
 
 server_rewriteBasePath = config['configurations']['kibana-config']['server.rewriteBasePath']
-# 'True' -> 'true', 'False' -> 'false'
-if server_rewriteBasePath == 'True':
+if server_rewriteBasePath is True:
     server_rewriteBasePath = 'true'
 else:
     server_rewriteBasePath = 'false'
 server_maxPayloadBytes = config['configurations']['kibana-config']['server.maxPayloadBytes']
 elasticsearch_url = config['configurations']['kibana-config']['elasticsearch.url']
 elasticsearch_preserveHost = config['configurations']['kibana-config']['elasticsearch.preserveHost']
-# 'True' -> 'true', 'False' -> 'false'
-if elasticsearch_preserveHost == 'True' or elasticsearch_preserveHost == 'true':
+if elasticsearch_preserveHost is True or elasticsearch_preserveHost is True:
     elasticsearch_preserveHost = 'true'
 else:
     elasticsearch_preserveHost = 'false'
@@ -52,8 +50,7 @@ elasticsearch_username = config['configurations']['kibana-config']['elasticsearc
 elasticsearch_password = config['configurations']['kibana-config']['elasticsearch.password']
 server_ssl_enabled = config['configurations']['kibana-config']['server.ssl.enabled']
 
-# 'True' -> 'true', 'False' -> 'false'
-if server_ssl_enabled == 'True':
+if server_ssl_enabled is True:
     server_ssl_enabled = 'true'
     server_ssl_certificate = 'server.ssl.certificate: ' + config['configurations']['kibana-config']['server.ssl.certificate']
     server_ssl_key = 'server.ssl.key: ' + config['configurations']['kibana-config']['server.ssl.key']
@@ -88,8 +85,7 @@ elasticsearch_customHeaders = config['configurations']['kibana-config']['elastic
 elasticsearch_shardTimeout = config['configurations']['kibana-config']['elasticsearch.shardTimeout']
 elasticsearch_startupTimeout = config['configurations']['kibana-config']['elasticsearch.startupTimeout']
 elasticsearch_logQueries = config['configurations']['kibana-config']['elasticsearch.logQueries']
-# 'True' -> 'true', 'False' -> 'false'
-if elasticsearch_logQueries == 'True':
+if elasticsearch_logQueries is True:
     elasticsearch_logQueries = 'true'
 else:
     elasticsearch_logQueries = 'false'
@@ -98,20 +94,17 @@ pid_file = pid_file_dir + '/kibana.pid'
 logging_dest_dir = config['configurations']['kibana-config']['logging.dest.dir']
 logging_dest = logging_dest_dir + '/kibana.log'
 logging_silent = config['configurations']['kibana-config']['logging.silent']
-# 'True' -> 'true', 'False' -> 'false'
-if logging_silent == 'True':
+if logging_silent is True:
     logging_silent = 'true'
 else:
     logging_silent = 'false'
 logging_quiet = config['configurations']['kibana-config']['logging.quiet']
-# 'True' -> 'true', 'False' -> 'false'
-if logging_quiet == 'True':
+if logging_quiet is True:
     logging_quiet = 'true'
 else:
     logging_quiet = 'false'
 logging_verbose = config['configurations']['kibana-config']['logging.verbose']
-# 'True' -> 'true', 'False' -> 'false'
-if logging_verbose == 'True':
+if logging_verbose is True:
     logging_verbose = 'true'
 else:
     logging_verbose = 'false'
