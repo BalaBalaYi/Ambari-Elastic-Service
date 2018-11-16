@@ -38,7 +38,18 @@ ambari-server restart
 4. Log into web then add service as usual. Such as:
 ![image](https://github.com/BalaBalaYi/Ambari-Elastic-Service/blob/master/doc/es-ambari-1.png)
 
-5. Enjoy urself.^^
+5. Choose node.
+
+6. Configure the service.
+#### Elasticsearch
+![config](/doc/es-ambari-2.png)
+![config](/doc/es-ambari-3.png)
+
+#### Kibana
+![config](/doc/kibana-ambari-1.png)
+![config](/doc/kibana-ambari-2.png)
+
+7. Finish the installation then enjoy urself.^^
 
 
 ## Notice

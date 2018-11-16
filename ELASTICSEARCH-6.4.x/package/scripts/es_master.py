@@ -100,8 +100,8 @@ class ESMaster(Script):
         Directory([params.es_master_pid_dir],
                   mode=0755,
                   cd_access='a',
-                  owner=params.redis_user,
-                  group=params.redis_group,
+                  owner=params.es_user,
+                  group=params.es_group,
                   create_parents=True
                   )
 

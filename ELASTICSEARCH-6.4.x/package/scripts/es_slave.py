@@ -100,8 +100,8 @@ class ESSlave(Script):
         Directory([params.es_slave_pid_dir],
                   mode=0755,
                   cd_access='a',
-                  owner=params.redis_user,
-                  group=params.redis_group,
+                  owner=params.es_user,
+                  group=params.es_group,
                   create_parents=True
                   )
 

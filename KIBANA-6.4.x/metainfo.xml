@@ -43,6 +43,10 @@
                 <timeout>300</timeout>
             </commandScript>
 
+            <requiredServices>
+                <service>ELASTICSEARCH</service>
+            </requiredServices>
+
             <configuration-dependencies>
                 <config-type>kibana-config</config-type>
                 <config-type>kibana-env</config-type>

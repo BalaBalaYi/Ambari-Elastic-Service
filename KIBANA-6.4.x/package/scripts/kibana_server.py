@@ -76,8 +76,8 @@ class KibanaServer(Script):
         Directory([params.pid_file_dir],
                   mode=0755,
                   cd_access='a',
-                  owner=params.redis_user,
-                  group=params.redis_group,
+                  owner=params.kibana_user,
+                  group=params.kibana_group,
                   create_parents=True
                   )
 
