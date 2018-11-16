@@ -72,6 +72,15 @@ class KibanaServer(Script):
         cmd = format("chown -R {kibana_user}:{kibana_group} {kibana_base_dir}")
         Execute(cmd)
 
+        # Make sure pid directory exist
+        Directory([params.pid_file_dir],
+                  mode=0755,
+                  cd_access='a',
+                  owner=params.redis_user,
+                  group=params.redis_group,
+                  create_parents=True
+                  )
+
         Execute('echo "Configuration complete"')
 
 

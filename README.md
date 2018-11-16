@@ -42,4 +42,5 @@ ambari-server restart
 
 
 ## Notice
-Need more test if using on production.
+1. Can be used in non-internet environment. But need to install all the dependency packages and upload the installation packages to the private-repo before the installation.
+2. Need more test if using on production.

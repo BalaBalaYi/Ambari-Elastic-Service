@@ -96,6 +96,15 @@ class ESSlave(Script):
         cmd = format("chown -R {es_user}:{es_group} {es_slave_base_dir}")
         Execute(cmd)
 
+        # Make sure pid directory exist
+        Directory([params.es_slave_pid_dir],
+                  mode=0755,
+                  cd_access='a',
+                  owner=params.redis_user,
+                  group=params.redis_group,
+                  create_parents=True
+                  )
+
         Execute('echo "Configuration complete"')
 
 
